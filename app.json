@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "goals-react-native",
+    "slug": "goals-react-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "usesNonExemptEncryption": false,
+      "supportsTablet": true,
+      "bundleIdentifier": "com.icantluvv.goalsreactnative"
+    },
+    "android": {
+      "permissions": ["INTERNET"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": ["expo-secure-store", "expo-router", "expo-secure-store"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4c40138d-e675-416e-9a8a-69bd4d6cbe32"
+      }
+    }
+  }
+}
