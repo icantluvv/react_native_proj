@@ -1,9 +1,11 @@
-interface GetMeProps {
-  data: Data;
-}
-
-interface Data {
-  logo: string;
-  username: string;
-  description: string;
+interface ProfileDataProps {
+  stories: []
+  username: string
+  photo: string
+  gender: string
+  id: number
+  first_name: string
+  email: string
+  description: string | null
+  birth_date: string
 }

@@ -5,28 +5,28 @@ import SettingsActiveSVG from '../assets/images/settingsIconActive.svg'
 import MapSVG from '../assets/images/mapIcon.svg'
 import MapActiveSVG from '../assets/images/mapIconActive.svg'
 import { View, Text, Pressable } from 'react-native'
-import { useNavigation } from 'expo-router'
 import { useState } from 'react'
+import { useRouter } from 'expo-router'
 
 export const NavigationBar = () => {
-  const navigation = useNavigation()
+  const router = useRouter()
   const [select, setSelect] = useState('index')
-
-  const navigateTo = (route: string) => {
+  const navigateTo = (route: 'index' | 'profile' | 'settings') => {
     try {
-      navigation.navigate(route)
+      const pathname = route === 'index' ? '/' : `/${route}`
+      router.push(pathname as any)
     } catch (error) {
       console.error('Ошибка:', error)
     }
   }
 
-  function choosePage(option: string) {
+  function choosePage(option: 'index' | 'profile' | 'settings') {
     setSelect(option)
     navigateTo(option)
   }
 
   return (
-    <View className=" w-full h-[92px] flex-row justify-center items-start pt-[4%] bg-white shadow-s">
+    <View className=" w-full h-[92px] bottom-[0] z-[1000] border-t border-[#e6e6e6] flex-row justify-center items-start pt-[4%] bg-white shadow-s">
       <Pressable
         onPress={() => choosePage('index')}
         className="flex flex-col items-center w-1/3 justify-center gap-y-1"

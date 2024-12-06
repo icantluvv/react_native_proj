@@ -1,11 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
 
 const Notifications = () => {
   return (
-    <View style={styles.container}>
-      <Text>Редактирование notify</Text>
-    </View>
+    <SafeAreaView className=" flex-1">
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <Text>Редактирование notify</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 

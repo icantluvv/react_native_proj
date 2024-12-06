@@ -1,13 +1,17 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
 
 const Confidences = () => {
   return (
-    <View style={styles.container}>
-      <Text>Редактирование conf</Text>
-    </View>
-  );
-};
+    <SafeAreaView className=" flex-1">
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <Text>Редактирование conf</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -15,6 +19,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   }
-});
+})
 
-export default Confidences;
+export default Confidences

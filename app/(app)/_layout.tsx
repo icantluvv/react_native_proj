@@ -1,13 +1,22 @@
-import { Redirect, router, Stack, useNavigation } from 'expo-router'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Image } from 'react-native'
-import { useSession } from '../../services/ctx'
+import { router, Stack } from 'expo-router'
+
+import { useSession } from '../../components/ctx'
+import React, { useEffect } from 'react'
+import LoadingScreen from '../../components/LoadingScreen'
 
 export default function AppLayout() {
   const { session, isLoading } = useSession()
 
-  if (!session) {
-    return <Redirect href="/sign_up" />
+  useEffect(() => {
+    if (!isLoading) {
+      if (!session) {
+        router.push('/(auth)/sign_up_user/sign_up')
+      }
+    }
+  }, [isLoading, session])
+
+  if (isLoading) {
+    return <LoadingScreen />
   }
 
   return (
@@ -16,53 +25,18 @@ export default function AppLayout() {
         name="(main)"
         options={{ headerShown: false }}
       ></Stack.Screen>
+
       <Stack.Screen
-        name="(settings)/accountEdit"
-        options={{
-          headerShown: true,
-          headerStyle: { backgroundColor: '#f2f2f2' },
-          headerShadowVisible: false,
-          title: 'Аккаунт',
-          headerLeft: ({}) => (
-            <TouchableOpacity onPress={() => router.back()}>
-              <Image
-                source={require('../../assets/images/BackButton.png')}
-                className="w-[17px] h-[17px]"
-              />
-            </TouchableOpacity>
-          )
-        }}
-      />
+        name="(organization)"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+
       <Stack.Screen
-        name="(settings)/confidences"
+        name="(settings)"
         options={{
-          headerShown: true,
-          title: 'Аккаунт',
-          headerLeft: ({}) => (
-            <TouchableOpacity onPress={() => router.back()}>
-              <Image
-                source={require('../../assets/images/BackButton.png')}
-                className="w-[17px] h-[17px]"
-              />
-            </TouchableOpacity>
-          )
+          headerShown: false
         }}
-      />
-      <Stack.Screen
-        name="(settings)/notifications"
-        options={{
-          headerShown: true,
-          title: 'Аккаунт',
-          headerLeft: ({}) => (
-            <TouchableOpacity onPress={() => router.back()}>
-              <Image
-                source={require('../../assets/images/BackButton.png')}
-                className="w-[17px] h-[17px]"
-              />
-            </TouchableOpacity>
-          )
-        }}
-      />
+      ></Stack.Screen>
     </Stack>
   )
 }

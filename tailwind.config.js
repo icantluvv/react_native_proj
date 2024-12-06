@@ -14,6 +14,7 @@ module.exports = {
         shadowText: '#ababab',
         lightGray: '#F9F9F9',
         goalsGreen: '#DEF24A',
+        activeGoalsGreen: '#C0D32F',
         background: '#f2f2f2',
         activeBlackButton: '#868686'
       }

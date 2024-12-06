@@ -6,7 +6,7 @@ const LoadingSkeletonProfile = () => {
     <View className="w-full overflow-hidden h-screen flex flex-col items-center ">
       <View className="w-full flex flex-col mt-[32%] items-center">
         <View className="w-full flex justify-center">
-          <View className="rounded-[50%] bg-skeleton w-[100px] h-[100px] animate-pulse"></View>
+          <View className="rounded-[50px] bg-skeleton w-[100px] h-[100px] animate-pulse"></View>
         </View>
         <View className="flex flex-col w-full items-center">
           <View className="w-full mt-[5px] flex justify-center">
@@ -32,13 +32,13 @@ const LoadingSkeletonProfile = () => {
         <View className="w-[94%] mt-[7%] bg-white rounded-[12px] p-5 flex flex-col items-center gap-y-6">
           <View className="flex flex-col w-full gap-y-3">
             <View className="w-full flex justify-between gap-x-4">
-              <View className="w-[40px] h-[40px] bg-skeleton rounded-[50%] animate-pulse"></View>
+              <View className="w-[40px] h-[40px] bg-skeleton rounded-[20px] animate-pulse"></View>
               <View className="flex flex-col  flex-grow gap-y-1">
                 <View className="h-[20px] bg-skeleton w-[100px] rounded-[50px] animate-pulse"></View>
                 <View className="h-[12px] bg-skeleton w-[50px] rounded-[25px] animate-pulse "></View>
               </View>
 
-              <View className="w-[40px] h-[40px] bg-skeleton rounded-[50%] animate-pulse"></View>
+              <View className="w-[40px] h-[40px] bg-skeleton rounded-[20px] animate-pulse"></View>
             </View>
             <View className="h-[30px]"></View>
           </View>
