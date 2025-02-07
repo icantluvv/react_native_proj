@@ -1,3 +1,1 @@
-This is part of startup project GOALS code
-
-Interesting: Native Maps, native animations with Animated 'react-native'
+В данном репозитории находится часть кода мобильного приложения Goals
